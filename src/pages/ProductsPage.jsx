@@ -1,6 +1,10 @@
 import React from 'react';
 
-function ProductsPage(props) {
+import { useProducts } from '../context/ProductContext';
+
+function ProductsPage() {
+   const products =useProducts();
+   console.log(products);
    return (
       <div>
          products
