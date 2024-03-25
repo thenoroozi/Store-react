@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useProducts } from '../context/ProductContext';
 import Card from '../components/Card';
@@ -6,18 +6,29 @@ import Loader from '../components/Loader';
 
 function ProductsPage() {
    const products = useProducts();
-   const [search, setSearch] = useState("")
 
+   const [search, setSearch] = useState("");
+   const [displayed, setDisplayed] = useState([]);
+   const [query, setQuery] = useState({});
+
+   useEffect(() => {
+      setDisplayed(products)
+   }, [products])
+
+   useEffect(() => {
+      console.log(query);
+   }, [query])
 
    const searchHandler = () => {
-      console.log(search);
+      setQuery(query => ({ ...query, search }))
    }
+
    const categoryHandler = (event) => {
       const { tagName } = event.target;
-      if (tagName !== "LI") return;
-
       const category = event.target.innerText.toLowerCase();
-      console.log(category);
+
+      if (tagName !== "LI") return;
+      setQuery(query => ({ ...query, category }))
    }
    return (
       <>
@@ -36,9 +47,9 @@ function ProductsPage() {
 
          <div className='container flex'>
             <div className="w-full flex flex-wrap justify-between">
-               {!products.length && <Loader />}
+               {!displayed.length && <Loader />}
                {
-                  products.map(product =>
+                  displayed.map(product =>
                      <Card key={product.id} data={product} />)
                }
             </div>
