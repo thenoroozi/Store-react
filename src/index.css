@@ -20,3 +20,8 @@
       box-sizing: border-box;
    }
 }
+@layer components{
+   .selected{
+      @apply bg-[#f7753d49] text-primary rounded-lg
+   }
+}

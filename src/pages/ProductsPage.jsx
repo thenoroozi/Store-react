@@ -36,7 +36,7 @@ function ProductsPage() {
    return (
       <>
       <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
-         <div className='container flex'>
+         <div className='container flex flex-col-reverse md:flex-row'>
             <div className="w-full flex flex-wrap justify-between">
                {!displayed.length && <Loader />}
                {
@@ -44,7 +44,7 @@ function ProductsPage() {
                      <Card key={product.id} data={product} />)
                }
             </div>
-            <Sidebar setQuery={setQuery} />
+            <Sidebar setQuery={setQuery} query={query}/>
          </div>
       </>
    );
