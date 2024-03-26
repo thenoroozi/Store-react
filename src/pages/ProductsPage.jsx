@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import Card from '../components/Card';
 import Loader from '../components/Loader';
-import { createQueryObject, filterProducts, searchProducts } from '../helper/helper';
+import { createQueryObject, filterProducts, getInitialQuary, searchProducts } from '../helper/helper';
 
 function ProductsPage() {
    const products = useProducts();
@@ -16,18 +16,21 @@ function ProductsPage() {
    const [searchParams, setSearchParams] = useSearchParams();
 
    useEffect(() => {
-      setDisplayed(products)
+      setDisplayed(products);
+      setQuery(getInitialQuary(searchParams))
    }, [products])
 
    useEffect(() => {
       setSearchParams(query);
+      setSearch(query.search || "")
+      
       let finalProducts = searchProducts(products, query.search)
       finalProducts = filterProducts(finalProducts, query.category);
       setDisplayed(finalProducts)
    }, [query])
 
    const searchHandler = () => {
-      setQuery(query => createQueryObject(query,{search}))
+      setQuery(query => createQueryObject(query, { search }))
    }
 
    const categoryHandler = (event) => {
@@ -35,7 +38,7 @@ function ProductsPage() {
       const category = event.target.innerText.toLowerCase();
 
       if (tagName !== "LI") return;
-      setQuery(query => createQueryObject(query,{category}))
+      setQuery(query => createQueryObject(query, { category }))
    }
    return (
       <>
