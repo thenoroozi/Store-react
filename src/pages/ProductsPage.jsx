@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useProducts } from '../context/ProductContext';
 import Card from '../components/Card';
 import Loader from '../components/Loader';
+import { filterProducts, searchProducts } from '../helper/helper';
 
 function ProductsPage() {
    const products = useProducts();
@@ -16,7 +17,9 @@ function ProductsPage() {
    }, [products])
 
    useEffect(() => {
-      console.log(query);
+      let finalProducts = searchProducts(products, query.search)
+      finalProducts = filterProducts(finalProducts, query.category);
+      setDisplayed(finalProducts)
    }, [query])
 
    const searchHandler = () => {
