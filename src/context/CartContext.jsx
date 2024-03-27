@@ -3,7 +3,7 @@ import { sumProducts } from '../helper/helper';
 
 
 const initialState = {
-   selecetedItems: [],
+   selectedItems: [],
    itemsCounter: 0,
    totalPrice: 0,
    checkout: false
@@ -12,21 +12,54 @@ const initialState = {
 const reducer = (state, action) => {
    switch (action.type) {
       case "ADD_ITEM":
-         if (!state.selecetedItems.find(item => item.id === action.payload.id)) {
-            state.selecetedItems.push({ ...action.payload, quantity: 1 })
+         {
+            if (!state.selectedItems.find(item => item.id === action.payload.id)) {
+               state.selectedItems.push({ ...action.payload, quantity: 1 })
+            }
+            return {
+               ...state,
+               ...sumProducts(state.selectedItems),
+               checkout: false,
+            }
          }
+      case "REMOVE_ITEM":
+         {
+            const newSelectedItems = state.selectedItems.filter(
+               item => item.id !== action.payload.id
+            );
+            return {
+               ...state,
+               selectedItems: [...newSelectedItems],
+               ...sumProducts(newSelectedItems)
+            };
+         }
+      case "INCREASE":
+         {
+            const index = state.selectedItems.findIndex(
+               item => item.id === action.payload.id);
+            state.selectedItems[index].quantity++;
+            return {
+               ...state,
+               ...sumProducts(state.selectedItems)
+            }
+         }
+      case "DECREASE":
+         {
+            const index = state.selectedItems.findIndex(
+               item => item.id === action.payload.id);
+            state.selectedItems[index].quantity--;
+            return {
+               ...state,
+               ...sumProducts(state.selectedItems)
+            }
+         }
+      case "CHECKOUT":
          return {
-            ...state,
-            ...sumProducts(state.selecetedItems),
-            checkout:false,
+            selectedItems: [],
+            itemsCounter: 0,
+            totalPrice: 0,
+            checkout: true
          }
-      case "ADD_ITEM":
-
-         break;
-      case "ADD_ITEM":
-
-         break;
-
       default:
          throw new Error("Invalid Action");
    }
