@@ -34,9 +34,9 @@ function ProductsPage() {
    }, [query])
 
    return (
-      <>
+      <div className='flex flex-col items-center justify-between'>
          <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
-         <div className='container flex flex-col-reverse md:flex-row'>
+         <div className='flex flex-col-reverse md:flex-row'>
             <div className="w-full grid justify-center grid-col-1 md:grid-cols-2 lg:grid-cols-3">
                {!displayed.length && <Loader />}
                {
@@ -46,7 +46,7 @@ function ProductsPage() {
             </div>
             <Sidebar setQuery={setQuery} query={query} />
          </div>
-      </>
+      </div>
    );
 }
 
