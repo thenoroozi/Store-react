@@ -8,6 +8,7 @@
       line-height: 1.5;
       margin: auto;
       display: flex;
+      justify-content: center;
       max-width: 1200px;
       min-height: 100vh;
       padding: 10px;

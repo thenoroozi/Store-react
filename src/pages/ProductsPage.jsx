@@ -35,16 +35,16 @@ function ProductsPage() {
 
    return (
       <>
-      <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
+         <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
          <div className='container flex flex-col-reverse md:flex-row'>
-            <div className="w-full flex flex-wrap justify-between">
+            <div className="w-full grid justify-center grid-col-1 md:grid-cols-2 lg:grid-cols-3">
                {!displayed.length && <Loader />}
                {
                   displayed.map(product =>
                      <Card key={product.id} data={product} />)
                }
             </div>
-            <Sidebar setQuery={setQuery} query={query}/>
+            <Sidebar setQuery={setQuery} query={query} />
          </div>
       </>
    );
