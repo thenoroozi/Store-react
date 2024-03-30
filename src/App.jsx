@@ -7,7 +7,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import PageNotFound from './pages/404';
 import ProductsProvider from './context/ProductContext';
 import CartProvider from './context/CartContext';
-import Layout from './Layout/Layout';
+import Layout from './layout/Layout'
 
 function App() {
    return (
