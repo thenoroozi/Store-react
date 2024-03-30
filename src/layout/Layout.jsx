@@ -31,7 +31,7 @@ function Layout({ children }) {
             </Link>
          </header>
          {children}
-         <footer className='container mx-auto py-3 bg-gray-800 text-center text-white text-lg md:rounded-md md:mb-2'>Developed by Hamed Noroozi</footer>
+         <footer className='container mx-auto mt-3 py-3 bg-gray-800 text-center text-white text-lg md:rounded-md md:mb-2'>Developed by Hamed Noroozi</footer>
       </>
    );
 }
