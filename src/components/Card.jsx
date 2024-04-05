@@ -14,19 +14,19 @@ function Card({ data }) {
    }
 
    return (
-      <div className='w-[230px] m-2 p-5 flex flex-col items-start 
-      justify-end bg-white border-2 border-dashed border-[#e2e2e2] rounded-2xl shadow-lg'>
+      <div className='w-[230px] m-2 p-5 flex flex-col items-start justify-end bg-white border-2 border-dashed border-[#e2e2e2] rounded-2xl shadow-lg
+      dark:bg-gray-700'>
          <img
             src={image}
             alt={title}
-            className='w-[200px] h-[200px] p-2 mb-4 bg-white' />
-         <h3 className='text-primary text-lg font-semibold'>
+            className='w-[200px] h-[200px] p-2 mb-4 bg-white rounded-lg' />
+         <h3 className='text-blue-700 dark:text-gray-100 text-lg font-semibold'>
             {shortenText(title)}</h3>
-         <p className='text-[#666] text-sm font-semibold mt-1.5  mb-4' >
+         <p className='text-[#666] dark:text-gray-200 text-sm font-semibold mt-1.5  mb-4' >
             {price} </p>
          <div className='w-full flex justify-between items-center'>
             <Link
-               className='text-2xl h-6 text-primary cursor-pointer'
+               className='text-2xl h-6 text-blue-600 dark:text-blue-500 cursor-pointer'
                to={`/products/${id}`}>
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
@@ -47,7 +47,7 @@ function Card({ data }) {
                      </svg>
                   </button>)}
 
-               {!!quantity && (<span className='w-5 text-center mx-2.5'>{quantity}</span>)}
+               {!!quantity && (<span className='w-5 text-center mx-2.5 text-black dark:text-white'>{quantity}</span>)}
 
                {quantity === 0 ?
                   (<button onClick={() => clickHandler("ADD_ITEM")} className='btn'>

@@ -22,10 +22,10 @@
 
 @layer components {
    .selected {
-      @apply bg-[#f7753d49] text-primary rounded-lg
+      @apply bg-blue-300 text-blue-700 rounded-lg
    }
 
    .btn {
-      @apply flex justify-center items-center bg-primary text-white border-none text-2xl h-7 w-7 p-0.5 rounded-lg cursor-pointer
+      @apply flex justify-center items-center bg-blue-600 text-white border-none text-2xl h-7 w-7 p-0.5 rounded-lg cursor-pointer
    }
 }

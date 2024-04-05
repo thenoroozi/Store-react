@@ -30,7 +30,7 @@ function Layout({ children }) {
             </Link>
          </header>
          {children}
-         <footer className='container mx-auto mt-3 py-3 bg-gray-800 text-center text-white flex flex-col items-center justify-evenly md:flex-row md:rounded-md md:mb-2'>
+         <footer className='container mx-auto mt-3 py-3 bg-gray-800 text-center text-white flex flex-col items-center justify-evenly md:flex-row md:rounded-2xl md:mb-2'>
             <span>
                This project is just a work sample,<br /> that is made with React and Tailwind.
             </span>

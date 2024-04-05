@@ -8,8 +8,8 @@ function BasketCard({ data, clickHandler }) {
 
    return (
       <div key={id} className='p-4 flex items-center justify-between border-2 border-dashed rounded-2xl space-y-2 md:space-y-0 md:flex-row '>
-         <img src={image} className='w-16 h-16' />
-         <p>{shortenText(title)}</p>
+         <img src={image} className='w-16 h-16 rounded-lg' />
+         <p className='text-black dark:text-white'>{shortenText(title)}</p>
          <div className='flex'>
             {quantity === 1 &&
                (<button onClick={() => clickHandler("REMOVE_ITEM", data)} className='btn'>
@@ -25,7 +25,7 @@ function BasketCard({ data, clickHandler }) {
                   </svg>
                </button>)}
 
-            {!!quantity && (<span className='w-5 text-center mx-2.5'>{quantity}</span>)}
+            {!!quantity && (<span className='w-5 text-center mx-2.5 dark:text-white'>{quantity}</span>)}
 
             <button onClick={() => clickHandler("INCREASE", data)} className='btn'>
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-5 h-5">
