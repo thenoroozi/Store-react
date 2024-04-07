@@ -14,7 +14,7 @@ function CheckoutPage() {
    }
 
    return (
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-6'>
          <Link to="/products" className='flex items-center text-white bg-blue-600 w-fit px-2 ml-4 text-lg font-semibold border-2 border-blue-600 shadow-md shadow-blue-400 dark:shadow-none rounded-lg'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2">
                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
