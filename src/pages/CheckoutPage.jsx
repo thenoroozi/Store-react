@@ -24,15 +24,15 @@ function CheckoutPage() {
          {state.itemsCounter > 0 ?
             <div className='my-8 flex flex-col-reverse items-center md:items-start md:flex-row'>
                <BasketSidebar state={state} clickHandler={clickHandler} />
-               <div className='w-full space-y-3 mb-3 bg-white rounded-2xl dark:bg-gray-700 dark:text-white'>
+               <div className='w-full space-y-3 mb-3 rounded-2xl'>
                   {state.selectedItems.map((product) => (
                      <BasketCard key={product.id} data={product} clickHandler={clickHandler} />
                   ))}
                </div>
             </div>
             :
-            <div className='w-fit h-32 mx-auto my-36 px-5 text-center leading-[128px] border-2 border-blue-600 border-dashed rounded-2xl text-lg font-semibold text-gray-500 
-             md:text-xl md:leading-[128px] dark:text-gray-300'>
+            <div className='w-fit h-32 mx-auto my-36 px-5 text-center leading-[128px] border-2 border-blue-600 border-dashed rounded-2xl text-lg font-semibold text-gray-500 shadow-lg
+             md:text-xl md:leading-[128px] dark:text-gray-300 dark:shadow-none'>
               <p> Unfortunately there is no products!</p>
             </div>
          }

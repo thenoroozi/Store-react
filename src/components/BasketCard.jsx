@@ -7,7 +7,8 @@ function BasketCard({ data, clickHandler }) {
 
 
    return (
-      <div key={id} className='p-4 flex items-center justify-between border-2 border-dashed rounded-2xl space-y-2 md:space-y-0 md:flex-row '>
+      <div key={id} className='p-4 bg-white flex items-center justify-between border-2 border-dashed rounded-2xl space-y-2 shadow-md
+      md:space-y-0 md:flex-row dark:bg-gray-700 dark:text-white dark:shadow-none'>
          <img src={image} className='w-16 h-16 rounded-lg' />
          <p className='text-black dark:text-white'>{shortenText(title)}</p>
          <div className='flex'>
