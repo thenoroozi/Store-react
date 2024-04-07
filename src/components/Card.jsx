@@ -15,13 +15,14 @@ function Card({ data }) {
 
    return (
       <div className='w-[230px] m-2 p-5 flex flex-col items-start justify-end bg-white border-2 border-dashed border-[#e2e2e2] rounded-2xl shadow-lg
-      dark:bg-gray-700'>
+      dark:bg-zinc-800'>
          <img
             src={image}
             alt={title}
             className='w-[200px] h-[200px] p-2 mb-4 bg-white rounded-lg' />
-         <h3 className='text-blue-700 dark:text-gray-100 text-lg font-semibold'>
-            {shortenText(title)}</h3>
+         <h3 className='text-blue-700 dark:text-blue-500 text-lg font-semibold'>  
+            <Link to={`/products/${id}`}>{shortenText(title)}</Link>
+            </h3>
          <p className='text-[#666] dark:text-gray-200 text-sm font-semibold mt-1.5  mb-4' >
             {price} </p>
          <div className='w-full flex justify-between items-center'>

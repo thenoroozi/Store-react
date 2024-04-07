@@ -30,15 +30,17 @@ function DetailsPage() {
    }
    return (
       <div className='flex flex-col mx-3 -mt-2 mb-10'>
-         <Link to="/products" className='flex items-center bg-white text-blue-600 w-fit px-2 ml-4 text-lg font-semibold border-2 border-blue-600 shadow-md shadow-blue-400 rounded-lg hover:text-white hover:bg-blue-600'>
+         <Link to="/products" className='flex items-center w-fit px-2 ml-4 text-white bg-blue-600 text-lg font-semibold border-2 border-blue-600 shadow-md shadow-blue-400 dark:shadow-none rounded-lg'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2">
                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
             Back to shop
          </Link>
          <div className='flex flex-col md:flex-row items-center mt-5 space-y-4 md:items-start md:space-y-0 md:space-x-6'>
+
             <img src={image} alt={title} className='w-64 h-64 bg-white p-2 border-2 border-blue-600 border-dashed rounded-3xl md:w-80 md:h-80' />
-            <div className='bg-white dark:bg-gray-600 border-2 border-[#cccccc] border-dashed rounded-3xl p-4 space-y-2 dark:text-white md:space-y-4'>
+
+            <div className='bg-white dark:bg-zinc-800 border-2 border-[#cccccc] border-dashed rounded-3xl p-4 space-y-2 dark:text-white md:space-y-4'>
                <div className='flex justify-between'>
                   <h3 className='font-bold text-blue-600 mr-1 dark:text-blue-500 md:text-xl'>{title}</h3>
                   <div className='flex items-center'>
@@ -46,8 +48,8 @@ function DetailsPage() {
                   <span className='font-semibold'>{rating.rate}</span>
                   </div>
                </div>
-               <p><span className='font-semibold mr-2'>Description: </span>{description}</p>
-               <p><span className='font-semibold mr-2'>Category:</span>{category}</p>
+               <p><span className='font-semibold text-blue-600 mr-2 dark:text-blue-400'>Description: </span>{description}</p>
+               <p><span className='font-semibold text-blue-600 mr-2 dark:text-blue-400'>Category:</span>{category}</p>
                <div className='flex justify-between'>
                   <span className='font-semibold text-green-600 dark:text-lime-400'>{price} $</span>
                   <div className='flex items-center'>

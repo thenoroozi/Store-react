@@ -17,7 +17,7 @@ function SearchBox({ search, setSearch, setQuery }) {
             value={search}
             onChange={e => setSearch(e.target.value.toLowerCase().trim())}
             className='bg-white mr-2.5 outline-none border-2 border-dashed border-blue-500 p-2 w-60 text-[0.9rem] text-blue-700 rounded-lg shadow-md shadow-blue-400 
-            dark:shadow-none dark:bg-gray-500 dark:text-gray-100'
+            dark:shadow-none dark:bg-zinc-800 dark:text-gray-100'
           />
          <button
          className='p-1.5 bg-blue-600 hover:bg-blue-700 text-white border-none rounded-lg cursor-pointer shadow-md shadow-blue-400 dark:shadow-none' 
