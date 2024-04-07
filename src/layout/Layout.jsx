@@ -37,20 +37,20 @@ function Layout({ children }) {
                <span className='font-bold'>Cantact me</span>
                <a href="http://github.com/thenoroozi"
                   target='_blank'
-                  className='flex items-center text-sm font-bold px-1 py-0.5 mt-2'>
+                  className='flex items-center text-sm font-bold px-1 py-0.5 mt-2 hover:text-gray-400'>
                   <img src={github} alt="github" className='w-5 mr-2 md:w-7' />
                   Thenoroozi
                </a>
                <a href="http://instagram.com/noroozidev"
                   target='_blank'
-                  className='flex items-center text-sm font-bold px-1 py-0.5'>
+                  className='flex items-center text-sm font-bold px-1 py-0.5 hover:text-gray-400'>
                   <img src={instagram} alt="instagram" className='w-5 mr-2 md:w-7' />
                   Noroozidev
                </a>
                <a href="https://www.linkedin.com/in/hamed-noroozi-570465208"
                   target='_blank'
-                  className='flex items-center text-sm font-bold px-1 py-0.5'>
-                  <img src={linkedin} alt="linkedin" className='w-5 mr-2 md:w-7' />
+                  className='flex items-center text-sm font-bold px-1 py-0.5 hover:text-gray-400'>
+                  <img src={linkedin} alt="linkedin" className='w-4 mr-3 md:w-6' />
                   Hamed Noroozi
                </a>
             </div>

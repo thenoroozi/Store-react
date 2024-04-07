@@ -34,10 +34,10 @@ function ProductsPage() {
    }, [query])
 
    return (
-      <div className='flex flex-col items-center justify-between'>
+      <div className='px-8 flex flex-col items-center justify-between'>
          <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
          <div className='flex flex-col-reverse md:flex-row'>
-            <div className="w-full grid justify-center grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="w-full grid gap-x-5 gap-y-2 justify-center grid-col-1 md:grid-cols-2 lg:grid-cols-3">
                {!displayed.length && <Loader />}
                {
                   displayed.map(product =>
