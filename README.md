@@ -6,6 +6,7 @@
   <li>Searck and filter at same time</li>
   <li>Add product to cart</li>
   <li>Checkout the cart</li>
+  <li>Dark theme</li>
   <li>SPA,pages like: products,product Details,cart and 404 page.</li>
 </ul>
 <h3>See Demo: <a href="https://hn-store-react.vercel.app/">Store<a></h3>
